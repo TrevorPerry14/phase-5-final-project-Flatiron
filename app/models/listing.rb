@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  belongs_to :User
-  belongs_to :Console
-  belongs_to :Game
+  has_one :user
+  has_one :console
+  has_one :game
 end

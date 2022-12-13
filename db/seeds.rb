@@ -282,7 +282,30 @@ Game.create(
 
 puts "Creating Listings"
 
+40.times {
+    Listing.create(
+        user_id: User.all.ids.sample,
+        game_id: Game.all.ids.sample,
+        listing_price: rand(20..100),
+        active: true
+    )
+}
+
+15.times {
+    Listing.create(
+        user_id: User.all.ids.sample,
+        console_id: Console.all.ids.sample,
+        listing_price: rand(60..120),
+        active: true
+    )
+}
+
 puts "Creating Wallets"
-
-
+users = User.all
+users.each do |user| 
+    Wallet.create(
+        user_id: user.id,
+        amount: rand(50..200)
+    )
+end
 puts "Done Creating"

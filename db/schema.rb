@@ -44,8 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_012405) do
     t.bigint "user_id", null: false
     t.bigint "console_id"
     t.bigint "game_id"
-    t.integer "market_price"
-    t.integer "percent_of_market_price"
+    t.integer "listing_price"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
