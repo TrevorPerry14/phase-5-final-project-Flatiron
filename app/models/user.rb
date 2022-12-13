@@ -3,4 +3,6 @@ class User < ApplicationRecord
     has_one :wallet
     has_many :consoles, through: :listings
     has_many :games, through: :listings
+
+    validates :display_name, uniqueness: true
 end
