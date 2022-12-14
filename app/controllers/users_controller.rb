@@ -18,6 +18,11 @@ class UsersController < ApplicationController
         head :no_content
     end
 
+    def create 
+        user = User.create!(user_params)
+        render json: user, status: :created
+    end
+
     private 
 
     def select_user
@@ -26,6 +31,10 @@ class UsersController < ApplicationController
 
     def render_not_found_response 
         render json: { error: "USER NOT FOUND" }, status: :not_found
+    end
+
+    def user_params 
+        params.permit(:email, :password, :name, :username, :country, :shipping_address)
     end
     
 end

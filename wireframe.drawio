@@ -1,0 +1,64 @@
+<mxfile host="65bd71144e">
+    <diagram id="YFKJWofSZI7ElyXNKPcx" name="Page-1">
+        <mxGraphModel dx="1168" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="20" width="620" height="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Top Nav Bar: Logo, login, signup, explore" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="50" width="590" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="This is the initial page if user is not logged in they will only have access to see consoles and games&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry y="100" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Large picture of logo with breief description of site below it" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="310" y="140" width="230" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Maybe have a bullet list of what game exchange is useful for" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="380" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="list of features and any fees that go along with the service" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="490" y="380" width="190" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="670" width="620" height="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Nav Bar for all pages onceuser is logged in: logo wallet amount, explore, Send, Want, Sending, Messages, Profile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="690" width="560" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="search products" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="780" width="550" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="List of consoles with clicks to open up a list of games for that console.&lt;br&gt;this box will aslo hav econsoles grouped by company." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="890" width="550" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="1360" width="620" height="510" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Send page" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="1390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Active listings with two divs for user info and card info" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="1630" width="590" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Filter to filter offers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="1480" width="590" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Want page displays the logged in users current listings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="1920" width="620" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="whenever a user accepts a listing to send it shows up here and is removed from the send page." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="2460" width="620" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Messages page where you can message other users" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="2970" width="620" height="570" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="profilce components" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="135" y="3570" width="630" height="510" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

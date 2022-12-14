@@ -21,7 +21,7 @@ puts "Creating Users"
         email: "#{Faker::Color.color_name}@gmail.com",
         password: "User123!",
         name: Faker::FunnyName.name,
-        display_name: "User#{rand(1..20)}",
+        username: "User#{rand(1..20)}",
         country: "United States Of America",
         shipping_address: Faker::Address.full_address
     )

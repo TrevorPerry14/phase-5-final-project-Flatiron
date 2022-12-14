@@ -7,7 +7,7 @@ class ConsolesController < ApplicationController
     end
 
     def show 
-        render json: @console
+        render json: @console, serializer: ConsoleGamesSerializer
     end
     
     private 
