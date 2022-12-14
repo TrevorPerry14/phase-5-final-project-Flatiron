@@ -18,13 +18,13 @@ export default function SignUp({ users, setUsers }) {
         sessionStorage.setItem("user_id", newUser.id)
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    function handleSubmit() {
+        // e.preventDefault();
         const newUser = {
             email: formData.email,
             password: formData.password,
             name: formData.name,
-            username: formData.name,
+            username: formData.username,
             country: formData.country,
             shipping_address: formData.shipping_address
         }

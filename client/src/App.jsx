@@ -16,10 +16,11 @@ export default function App() {
     .then(data => setUsers(data))
   }, [])
 
-  
+  const currentUser = sessionStorage.getItem('user_id')
+
   return (
     <div>
-      <NavBar/>
+      {currentUser ? <NavBar2 /> : <NavBar />}
       <Routes >
         <Route path='/' element={<LandingPage />}/>
         <Route path='/explore' element={<ExplorePage />}/>
