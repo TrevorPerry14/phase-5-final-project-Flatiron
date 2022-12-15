@@ -17,6 +17,11 @@ class ListingsController < ApplicationController
         head :no_content
     end
 
+    def create 
+        listing = Listing.create!(listing_params)
+        render json: listing, status: :created
+    end
+
     private 
 
     def select_listing
@@ -25,6 +30,10 @@ class ListingsController < ApplicationController
 
     def render_not_found_response 
         render json: { error: "USER NOT FOUND" }, status: :not_found
+    end
+
+    def listing_params 
+        params.permit(:user_id, :console_id, :game_id, :listing_price)
     end
 
 end

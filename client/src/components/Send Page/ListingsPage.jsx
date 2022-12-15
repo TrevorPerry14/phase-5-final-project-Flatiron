@@ -2,18 +2,15 @@ import React, { useState, useEffect } from 'react'
 import SearchFilter from './SearchFilter'
 import ListingsContainer from './ListingsContainer'
 
-export default function ListingsPage() {
+export default function ListingsPage({ listings }) {
 
-    const [listings, setListings ] = useState([])
-
-    useEffect(() => {
-        fetch(`/listings`)
-        .then(res => res.json())
-        .then(data => setListings(data))
-    }, [])
     
+
+
+
     return (
         <div>
+            <h2>Send Packages</h2>
             <div>
                 <SearchFilter />
             </div>

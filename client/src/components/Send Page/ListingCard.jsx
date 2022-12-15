@@ -13,6 +13,7 @@ export default function ListingCard({ listing }) {
                 {game_id}
                 {listing_price}
             </div>
+            <button>Send To User</button>
         </div>
     )
 }
