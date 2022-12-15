@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     end
 
     def show 
-        render json: @user
+        render json: @user, serializer: UserListingsSerializer
     end
 
     def destroy 

@@ -6,8 +6,8 @@ export default function NavBar2() {
         <div>
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/explore'>Explore</NavLink>
-            <NavLink>Send</NavLink>
-            <NavLink>My Wants</NavLink>
+            <NavLink to='/sendlistings'>Send</NavLink>
+            <NavLink to='/userlistings'>My Wants</NavLink>
             <NavLink>Sending</NavLink>
             <NavLink>Profile</NavLink>
         </div>
