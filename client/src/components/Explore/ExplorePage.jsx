@@ -4,7 +4,7 @@ import GameCollection from './GameCollection'
 import SearchConsoleFilter from './SearchConsoleFilter'
 import SearchGameFilter from './SearchGameFilter'
 
-export default function ExplorePage() {
+export default function ExplorePage({ setCurrentConsole, setCurrentGame }) {
     const [consoles, setConsoles] = useState([])
     const [games, setGames] = useState([])
     const [exploreConsoles, setExploreConsoles] = useState(true)
@@ -56,7 +56,11 @@ export default function ExplorePage() {
                 <button onClick={handleGameClick}>Games</button>
             </div>
             <div>
-                {exploreConsoles ? <ConsoleCollection consoles={displaySearchedConsoles}/> : <GameCollection games={displaySearchedGames}/>}
+                {exploreConsoles 
+                ? 
+                <ConsoleCollection consoles={displaySearchedConsoles} setCurrentConsole={setCurrentConsole}/> 
+                : 
+                <GameCollection games={displaySearchedGames} setCurrentGame={setCurrentGame}/>}
             </div>
         </div>
     )

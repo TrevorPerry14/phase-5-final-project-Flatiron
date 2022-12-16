@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 
-export default function LandingPage() {
+export default function LandingPage({ currentUser }) {
     const navigate = useNavigate()
 
     function handleClick() {
@@ -13,7 +13,7 @@ export default function LandingPage() {
             <div>
                 <h1>Game Exchange</h1>
                 <h2>Buy, Sell, and Trade Vintage Video Games and Consoles</h2>
-                <button onClick={handleClick}>Sign Up - It's Free!</button>
+                {currentUser ? <div></div> : <button onClick={handleClick}>Sign Up - It's Free!</button>}
             </div>
             <div>
                 <h4>Game Exchange Can Help:</h4>

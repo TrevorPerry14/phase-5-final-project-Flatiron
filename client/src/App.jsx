@@ -10,12 +10,15 @@ import ListingsPage from './components/Send Page/ListingsPage';
 import UserListingsPage from './components/User Listings/UserListingsPage';
 import SendingPage from './components/Sending Page/SendingPage';
 import UserProfile from './components/Profile Page/UserProfile';
+import ConsoleDetails from './components/Explore/ConsoleDetails';
+import GameDetails from './components/Explore/GameDetails';
 
 export default function App() {
   const [users, setUsers] = useState([])
   const [listings, setListings ] = useState([])
   const [ user, setUser ] = useState([])
-
+  const [ currentConsole, setCurrentConsole ] = useState([])
+  const [ currentGame, setCurrentGame ] = useState([])
   
 
   useEffect(() => {
@@ -52,27 +55,44 @@ useEffect(() => {
       {currentUser ? <NavBar2 user={user}/> : <NavBar />}
       <Routes >
         <Route path='/' 
-          element={<LandingPage />}/>
+          element={<LandingPage 
+            currentUser={currentUser}
+          />}/>
         <Route path='/explore' 
-          element={<ExplorePage />}/>
+          element={<ExplorePage setCurrentConsole={setCurrentConsole} setCurrentGame={setCurrentGame}/>
+          }/>
         <Route path='/login' 
-          element={<LogIn />}/>
+          element={<LogIn />
+          }/>
         <Route path='/signup' 
           element={<SignUp 
           users={users} 
-          setUsers={setUsers}/>}/>
+          setUsers={setUsers}/>
+          }/>
         <Route path='/sendlistings' 
           element={<ListingsPage 
-          listings={listings}/>}/>
+          listings={listings}/>
+          }/>
         <Route path='/userlistings' 
           element={<UserListingsPage 
           removeListing={removeListing} 
           updateListings={updateListings}
-          user={user}/>}/>
+          user={user}/>
+          }/>
         <Route path='/sending' 
-          element={<SendingPage />}/>
+          element={<SendingPage />
+          }/>
         <Route path='/userprofile' 
-          element={<UserProfile user={user}/>}/>
+          element={<UserProfile user={user}/>
+          }/>
+        <Route path='/consoledetails' 
+          element={<ConsoleDetails 
+            currentConsole={currentConsole}/>
+          }/>
+        <Route path='/gamedetails' 
+          element={<GameDetails 
+          currentGame={currentGame}/>
+          }/>
       </Routes>
     </div>
   )

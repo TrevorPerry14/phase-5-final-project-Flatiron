@@ -1,6 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function ConsoleCard({ console }) {
+export default function ConsoleCard({ console, setCurrentConsole }) {
+    const navigate = useNavigate()
+
+    function handleClick() {
+        setCurrentConsole(console)
+        navigate('/consoledetails')
+    }
 
     const {name, publisher, developer, release_date, number_of_players, loose_price, cib_price} = console
 
@@ -16,16 +23,7 @@ export default function ConsoleCard({ console }) {
             <div>publisher: {publisher}</div>
             <div>developer: {developer}</div>
             <div>number of players: {number_of_players}</div>
-
-                
-            
-            <div>
-                 
-                
-                
-                
-                
-            </div>
+            <button onClick={handleClick}>Details</button>
         </div>
     )
 }

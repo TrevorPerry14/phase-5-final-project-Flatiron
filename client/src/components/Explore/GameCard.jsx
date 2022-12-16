@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function GameCard({ game }) {
+export default function GameCard({ game, setCurrentGame }) {
+
+    const navigate = useNavigate()
+
+    function handleClick() {
+        setCurrentGame(game)
+        navigate('/gamedetails')
+    }
 
     const {name, console_id, publisher, developer, number_of_players, loose_price, cib_price} = game
     return (
@@ -12,6 +20,7 @@ export default function GameCard({ game }) {
             <div>Publisher: {publisher}</div>
             <div>Developer: {developer}</div>
             <div>players: {number_of_players}</div>
+            <button onClick={handleClick}>Details</button>
         </div>
     )
 }
