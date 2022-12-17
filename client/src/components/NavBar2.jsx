@@ -19,7 +19,9 @@ export default function NavBar2({ user }) {
             <NavLink to='/sendlistings'>Send          </NavLink>
             <NavLink to='/userlistings'>My Wants          </NavLink>
             <NavLink to='/sending'>Sending          </NavLink>
-            <NavLink to='/userprofile'>{name}</NavLink>
+            <NavLink to='/receiving'>Receiving           </NavLink>
+            <NavLink to='/userprofile'>{name}          </NavLink>
+            
             <div>
                 <button onClick={handleLogOut}>Log Out</button>
             </div>

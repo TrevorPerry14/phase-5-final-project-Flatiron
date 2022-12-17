@@ -12,6 +12,7 @@ import SendingPage from './components/Sending Page/SendingPage';
 import UserProfile from './components/Profile Page/UserProfile';
 import ConsoleDetails from './components/Explore/ConsoleDetails';
 import GameDetails from './components/Explore/GameDetails';
+import ReceivingPage from './components/Sending Page/ReceivingPage';
 
 export default function App() {
   const [users, setUsers] = useState([])
@@ -82,6 +83,9 @@ useEffect(() => {
         <Route path='/sending' 
           element={<SendingPage listings={listings}/>
           }/>
+        <Route path='/receiving'
+        element={<ReceivingPage listings={listings} removeListing={removeListing}/>}
+        />
         <Route path='/userprofile' 
           element={<UserProfile user={user}/>
           }/>

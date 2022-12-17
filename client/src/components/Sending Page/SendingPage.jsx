@@ -5,10 +5,13 @@ export default function SendingPage({ listings }) {
 
     const id = sessionStorage.getItem("user_id")
 
-    const sendingListings = listings.filter((listing) =>
+    const filteredListings = listings.filter((listing) =>
     listing.sending_user == id)
 
-    const listingsToSend = sendingListings.map((listing) => 
+    // const sendingListings = filteredListings.filter((listing) => 
+    // listing.recieving == false)
+
+    const listingsToSend = filteredListings.map((listing) => 
     <SendingListingCard key={listing.id} listing={listing}/>)
 
     return (

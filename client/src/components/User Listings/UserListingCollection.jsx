@@ -5,7 +5,9 @@ export default function UserListingCollection({ user, removeListing }) {
 
     const {listings} = user
     
-    const myListings = listings?.map((listing) => <UserListingCard key={listing.id} listing={listing} removeListing={removeListing}/>)
+    const myListings = listings?.map((listing) => 
+    <UserListingCard key={listing.id} listing={listing} removeListing={removeListing}/>
+    )
 
 
 
