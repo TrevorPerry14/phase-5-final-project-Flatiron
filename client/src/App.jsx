@@ -80,7 +80,7 @@ useEffect(() => {
           user={user}/>
           }/>
         <Route path='/sending' 
-          element={<SendingPage />
+          element={<SendingPage listings={listings}/>
           }/>
         <Route path='/userprofile' 
           element={<UserProfile user={user}/>

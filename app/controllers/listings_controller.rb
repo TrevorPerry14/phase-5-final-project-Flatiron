@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
-    before_action :select_listing, only: [:show, :destroy]
+    before_action :select_listing, only: [:show, :destroy, :update]
 
     def index 
         render json: Listing.all
@@ -22,6 +22,11 @@ class ListingsController < ApplicationController
         render json: listing, status: :created
     end
 
+    def update 
+        @listing.update(listing_params)
+        render json: @listing
+    end
+
     private 
 
     def select_listing
@@ -33,7 +38,7 @@ class ListingsController < ApplicationController
     end
 
     def listing_params 
-        params.permit(:user_id, :console_id, :game_id, :listing_price)
+        params.permit(:id, :user_id, :console_id?, :game_id, :listing_price, :active, :sending_user, :recieving)
     end
 
 end

@@ -4,9 +4,8 @@ import ListingsContainer from './ListingsContainer'
 
 export default function ListingsPage({ listings }) {
 
-    
-
-
+    const activeListings = listings.filter((listing) =>
+    listing.active == true)
 
     return (
         <div>
@@ -15,7 +14,7 @@ export default function ListingsPage({ listings }) {
                 <SearchFilter />
             </div>
             <div>
-                <ListingsContainer listings={listings}/>
+                <ListingsContainer listings={activeListings}/>
             </div>
         </div>
     )

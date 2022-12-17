@@ -45,7 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_012405) do
     t.bigint "console_id"
     t.bigint "game_id"
     t.integer "listing_price"
-    t.boolean "active"
+    t.boolean "active", default: true
+    t.integer "sending_user", default: 0
+    t.boolean "recieving", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["console_id"], name: "index_listings_on_console_id"

@@ -1,8 +1,10 @@
 class ListingSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :console_id, :game_id, :listing_price, :active
+  attributes :id, :user_id, :console_id, :game_id, :listing_price, :active, :sending_user, :recieving
   attribute :console_id, if: :console_id_true
   attribute :game_id, if: :game_id_true
 
+  belongs_to :user
+  
   def user_id 
     self.object.user.name
   end

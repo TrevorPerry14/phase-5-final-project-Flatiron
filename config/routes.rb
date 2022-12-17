@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :destroy, :create]
   resources :consoles, only: [:index, :show, :destroy]
   resources :games, only: [:index, :show, :destroy]
-  resources :listings, only: [:index, :show, :destroy, :create]
+  resources :listings, only: [:index, :show, :destroy, :create, :update]
   resources :wallets, only: [:index, :show, :destroy]
 
   post "/login", to: "sessions#create"

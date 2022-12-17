@@ -5,7 +5,10 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.belongs_to :console, null: true, foreign_key: true
       t.belongs_to :game, null: true, foreign_key: true
       t.integer :listing_price
-      t.boolean :active
+      t.boolean :active, default: true
+      t.integer :sending_user, default: 0
+      t.boolean :recieving, default: false
+
 
       t.timestamps
     end
