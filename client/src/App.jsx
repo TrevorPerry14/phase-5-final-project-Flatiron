@@ -13,6 +13,7 @@ import UserProfile from './components/Profile Page/UserProfile';
 import ConsoleDetails from './components/Explore/ConsoleDetails';
 import GameDetails from './components/Explore/GameDetails';
 import ReceivingPage from './components/Sending Page/ReceivingPage';
+import WalletPage from './components/Wallet/WalletPage';
 
 export default function App() {
   const [users, setUsers] = useState([])
@@ -20,7 +21,15 @@ export default function App() {
   const [ user, setUser ] = useState([])
   const [ currentConsole, setCurrentConsole ] = useState([])
   const [ currentGame, setCurrentGame ] = useState([])
+  const [ userWallet, setUserWallet ] = useState([])
+  const [ walletAmount, setWalletAmount] = useState('')
   
+  useEffect(() => {
+    fetch(`/wallets/${currentUser}`)
+    .then(res => res.json())
+    .then(data => setUserWallet(data))
+    .then(setWalletAmount(userWallet.amount))
+}, [setWalletAmount])
 
   useEffect(() => {
     fetch(`/users`)
@@ -97,6 +106,8 @@ useEffect(() => {
           element={<GameDetails 
           currentGame={currentGame}/>
           }/>
+          <Route path='wallet'
+          element={<WalletPage userwallet={userWallet} walletAmount={walletAmount} setWalletAmount={setWalletAmount}/>}/>
       </Routes>
     </div>
   )

@@ -14,7 +14,7 @@ export default function NavBar2({ user }) {
     return (
         <div>
             <NavLink to='/'>Home          </NavLink>
-            <NavLink>Wallet: ${wallet?.amount}          </NavLink>
+            <NavLink to='wallet'>Wallet: ${wallet?.amount}          </NavLink>
             <NavLink to='/explore'>Explore          </NavLink>
             <NavLink to='/sendlistings'>Send          </NavLink>
             <NavLink to='/userlistings'>My Wants          </NavLink>

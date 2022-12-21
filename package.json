@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "prefix": "^1.0.0"
+    "dotenv": "^16.0.3",
+    "prefix": "^1.0.0",
+    "react-stripe-checkout": "^2.6.3"
   }
 }

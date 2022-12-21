@@ -82,6 +82,7 @@ GEM
     crass (1.0.6)
     date (3.3.1)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
     erubi (1.11.0)
     faker (3.0.0)
       i18n (>= 1.8.11, < 2)
@@ -124,6 +125,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.1)
     rack (2.2.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4)
@@ -178,6 +181,7 @@ GEM
       activesupport (>= 4.2.0)
     spring (4.1.0)
     sqlite3 (1.5.4-x86_64-linux)
+    stripe (8.0.0)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -197,16 +201,19 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
+  dotenv
   faker
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4)
   rspec-json_expectations
   rspec-rails (~> 5.0.0)
   shoulda-matchers (~> 4.0)
   spring
   sqlite3 (~> 1.4)
+  stripe
   tzinfo-data
 
 RUBY VERSION

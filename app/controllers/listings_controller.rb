@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     before_action :select_listing, only: [:show, :destroy, :update]
 
     def index 
-        render json: Listing.all
+        render json: Listing.all, include: ["user", "user.wallet"]
     end
 
     def show 
