@@ -12,19 +12,21 @@ export default function NavBar2({ user }) {
         navigate('/')
     }
     return (
-        <div>
-            <NavLink to='/'>Home          </NavLink>
-            <NavLink to='wallet'>Wallet: ${wallet?.amount}          </NavLink>
-            <NavLink to='/explore'>Explore          </NavLink>
-            <NavLink to='/sendlistings'>Send          </NavLink>
-            <NavLink to='/userlistings'>My Wants          </NavLink>
-            <NavLink to='/sending'>Sending          </NavLink>
-            <NavLink to='/receiving'>Receiving           </NavLink>
-            <NavLink to='/userprofile'>{name}          </NavLink>
+    <div>
+        <div className=" w-screen h-[40px] z-10 bg-green-200 fixed drop-shadow-lg outline space-x-4 ">
+            <NavLink to='/' className="absolute left-[4%] top-[20%]">Home          </NavLink>
+            <NavLink to='wallet' className="absolute left-[7%] top-[20%]">Wallet: ${wallet?.amount}          </NavLink>
+            <NavLink to='/explore' className="absolute left-[15%] top-[20%]">Explore          </NavLink>
+            <NavLink to='/sendlistings' className="absolute left-[20%] top-[20%]">Send          </NavLink>
+            <NavLink to='/userlistings' className="absolute left-[24%] top-[20%]">My Wants          </NavLink>
+            <NavLink to='/sending' className="absolute left-[31%] top-[20%]">Sending          </NavLink>
+            <NavLink to='/receiving' className="absolute left-[37%] top-[20%]">Receiving           </NavLink>
+            <NavLink to='/userprofile' className="absolute left-[44%] top-[20%]">{name}          </NavLink>
             
-            <div>
-                <button onClick={handleLogOut}>Log Out</button>
-            </div>
+            
+            <button onClick={handleLogOut} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out absolute left-[89%] top-[5%]">Log Out</button>
+
         </div>
+    </div>
     )
 }

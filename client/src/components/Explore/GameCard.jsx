@@ -14,13 +14,9 @@ export default function GameCard({ game, setCurrentGame }) {
     return (
         <div>
             <div>{name}</div>
-            <div>loose: {loose_price}</div>
-            <div>CIB: {cib_price}</div>
             <div>console: {console_id}</div>
             <div>Publisher: {publisher}</div>
-            <div>Developer: {developer}</div>
-            <div>players: {number_of_players}</div>
-            <button onClick={handleClick}>Details</button>
+            <button onClick={handleClick} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Details</button>
         </div>
     )
 }

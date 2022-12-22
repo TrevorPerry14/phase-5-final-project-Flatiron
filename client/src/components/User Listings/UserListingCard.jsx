@@ -25,8 +25,8 @@ export default function UserListingsCard({ listing, removeListing }) {
                 {listing_price}
             </div>
             <div>
-                <button>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+                <button className="inline-block px-6 py-2.5 bg-yellow-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Edit</button>
+                <button onClick={handleDelete} className="inline-block px-6 py-2.5 bg-red-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
             </div>
         </div>
     )

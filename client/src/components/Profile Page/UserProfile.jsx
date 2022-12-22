@@ -3,7 +3,7 @@ import React from 'react'
 export default function UserProfile({ user }) {
     const{ name, username, country, shipping_address } = user
     return (
-        <div>
+        <div className="absolute top-20 left-5">
             UserProfile
             <div>
                 <div>name: {name}</div>

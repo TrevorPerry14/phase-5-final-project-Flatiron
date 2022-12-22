@@ -12,7 +12,7 @@ export default function ListingsContainer({ listings }) {
 
 
     return (
-        <div>
+        <div className="space-y-5">
             {allListings}
         </div>
     ) 

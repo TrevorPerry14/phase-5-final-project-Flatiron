@@ -12,7 +12,7 @@ export default function GameCollection({ games, setCurrentGame }) {
     )
 
     return (
-        <div>
+        <div className="space-y-5">
             {gameList}
         </div>
     )

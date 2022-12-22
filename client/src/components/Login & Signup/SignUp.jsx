@@ -41,7 +41,7 @@ export default function SignUp({ users, setUsers }) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="grid place-items-center space-y-2 absolute top-[20%] left-[42%]">
                 <label>email:</label>
                 <input name='email' type='text' onChange={handleChange}></input>
                 <label>password</label>
@@ -54,7 +54,7 @@ export default function SignUp({ users, setUsers }) {
                 <input name='country' type='text' onChange={handleChange}></input>
                 <label>shipping address</label> 
                 <input name='shipping_address' type='text' onChange={handleChange}></input>
-                <button>Sign Up!</button>
+                <button className="inline-block px-6 py-2.5 bg-green-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Sign Up!</button>
             </form>
         </div>
     )

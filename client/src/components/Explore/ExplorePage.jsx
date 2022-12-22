@@ -41,8 +41,8 @@ export default function ExplorePage({ setCurrentConsole, setCurrentGame }) {
 
 
     return (
-        <div>
-            <h1>Explore</h1>
+        <div className="absolute top-20 left-5">
+            <h1 className="grid place-items-center font-bold">Explore</h1>
             <div>
                 {exploreConsoles 
                 ? 
@@ -51,9 +51,9 @@ export default function ExplorePage({ setCurrentConsole, setCurrentGame }) {
                 <SearchGameFilter gameSearch={gameSearch} setGameSearch={setGameSearch}
                 />}
             </div>
-            <div>
-                <button onClick={handleConsoleClick}>Consoles</button>
-                <button onClick={handleGameClick}>Games</button>
+            <div className="place-items-center">
+                <button onClick={handleConsoleClick} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Consoles</button>
+                <button onClick={handleGameClick} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Games</button>
             </div>
             <div>
                 {exploreConsoles 

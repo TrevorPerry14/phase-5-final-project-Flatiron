@@ -22,7 +22,7 @@ export default function UserListingsPage({ removeListing, updateListings }) {
     //     />)
 
     return (
-        <div>
+        <div className="absolute top-20 left-5">
             <h2>My Wants</h2>
             <AddListingForm updateListings={updateListings}/>
             <UserListingCollection user={user} removeListing={removeListing}/>

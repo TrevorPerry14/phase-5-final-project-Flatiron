@@ -13,7 +13,7 @@ export default function ReceivingPage({ removeListing }) {
     }, [])
 
     return (
-        <div>
+        <div className="absolute top-20 left-5">
             <h3>Receiving Orders</h3>
             <div>
                 <ReceivingCollection user={user} removeListing={removeListing}/>

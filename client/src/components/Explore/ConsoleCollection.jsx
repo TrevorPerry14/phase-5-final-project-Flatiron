@@ -11,7 +11,7 @@ export default function ConsoleCollection({ consoles, setCurrentConsole }) {
     />
     )
     return (
-        <div>
+        <div className="space-y-5">
             {consoleList}
         </div>
     )

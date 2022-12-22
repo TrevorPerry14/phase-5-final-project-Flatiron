@@ -8,8 +8,8 @@ export default function ListingsPage({ listings }) {
     listing.active == true)
 
     return (
-        <div>
-            <h2>Send Packages</h2>
+        <div className="absolute top-20 left-5">
+            <h2 className="font-bold ">Send Packages</h2>
             <div>
                 <SearchFilter />
             </div>
