@@ -1,31 +1,34 @@
 import React, { useState } from 'react'
 
-export default function AddListingForm({ updateListings }) {
-    const [ formData, setFormData] = useState('')
+export default function HaveForm({ updateHaves }) {
+    const [ formData, setFormData ] = useState('')
 
-    const id = sessionStorage.getItem('user_id')
+    const userId = sessionStorage.getItem("user_id")
 
     function handleSubmit(e) {
-        e.preventDefault();
-        const newListing = {
-            user_id: id,
+        e.preventDefault()
+        const newHave = {
+            user_id: userId,
             console_id: formData.console_id,
             game_id: formData.game_id,
-            listing_price: formData.listing_price
+            quantity: formData.quantity,
+            active: true,
+            console_listing: formData.console_listing,
         }
-        fetch(`/listings`, {
+
+        fetch('/haves', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newListing)
+            body: JSON.stringify(newHave)
         })
         .then(res => res.json())
-        .then(data => updateListings(data))
+        .then(data => updateHaves(data))
     }
 
-    function handleChange(e) {
-        const {name, value} = e.target;
+    function handleChange(e){
+        const { name, value } = e.target 
         setFormData({
             ...formData, [name]: value
         })
@@ -38,12 +41,19 @@ export default function AddListingForm({ updateListings }) {
         })
     }
 
-    
     return (
         <div>
-            <h2>Add Want Here</h2>
             <form onSubmit={handleSubmit}>
-                <label>Console(only if selling console)</label>
+                <div>
+                <label>Console or Game : </label>
+                <select name='console_listing' onChange={handleChange}>
+                    <option></option>
+                    <option value={true}>Console</option>
+                    <option value={false}>Game</option>
+                </select>
+                </div>
+                <div>
+                <label>Console(only if selling console):  </label>
                 <select name='console_id' onChange={handleSelect}>
                     <option></option>
                     <option value='1'>Nintendo NES</option>
@@ -52,7 +62,7 @@ export default function AddListingForm({ updateListings }) {
                     <option value='4'>Nintendo Gamecube</option>
                     <option value='5'>GameBoy</option>
                 </select>
-                <label>Game(only if selling game)</label>
+                <label>Game(only if selling game):  </label>
                 <select name='game_id' onChange={handleSelect}>
                     <option></option>
                     <option value='1'>Super Mario Bros</option>
@@ -76,9 +86,12 @@ export default function AddListingForm({ updateListings }) {
                     <option value='19'>Pokemon Blue</option>
                     <option value='20'>Zelda Link's Awakening</option>
                 </select>
-                <label>Price</label>
-                <input name='listing_price' placeholder='price here' type='text' onChange={handleChange}></input>
-                <button className="inline-block px-6 py-2.5 bg-green-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                <label>Quantity:  </label>
+                <input type='text' name='quantity' onChange={handleChange}/>
+                <button className="inline-block px-6 py-2.5 bg-green-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Add</button>
+                </div>
+                
+                <label></label>
             </form>
         </div>
     )

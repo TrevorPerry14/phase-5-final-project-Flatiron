@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show, :destroy]
   resources :listings, only: [:index, :show, :destroy, :create, :update]
   resources :wallets, only: [:index, :show, :destroy, :update]
+  resources :haves, only: [:index, :create, :destroy, :update]
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

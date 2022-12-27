@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 
-export default function ListingCard({ listing }) {
+export default function ListingCard({ listing, consoleHaves }) {
     const [currentListing, setCurrentListing] = useState(listing)
     const [balance, setBalance] = useState(currentListing.user.wallet.amount)
  
-    const { id, user_id, console_id, game_id, listing_price, sending_user, active} = listing
+    const { id, user_id, console_id, game_id, listing_price, sending_user, active, console} = listing
 
     function handleEdit(name, value) {
         setCurrentListing({

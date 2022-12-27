@@ -22,7 +22,7 @@ export default function ConsoleDetails({ currentConsole }) {
     )
 
     return (
-        <div>
+        <div className="absolute top-20 left-5">
             <div>
                 <div>
                     {name}

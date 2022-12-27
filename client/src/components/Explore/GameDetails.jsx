@@ -17,7 +17,7 @@ export default function GameDetails({ currentGame }) {
     )
 
     return (
-        <div>
+        <div className="absolute top-20 left-5">
             <div>
                 <div>{name}</div>
                 <div>

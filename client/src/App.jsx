@@ -14,6 +14,7 @@ import ConsoleDetails from './components/Explore/ConsoleDetails';
 import GameDetails from './components/Explore/GameDetails';
 import ReceivingPage from './components/Sending Page/ReceivingPage';
 import WalletPage from './components/Wallet/WalletPage';
+import HavesPage from './components/Haves/HavesPage';
 
 export default function App() {
   const [users, setUsers] = useState([])
@@ -23,31 +24,42 @@ export default function App() {
   const [ currentGame, setCurrentGame ] = useState([])
   const [ userWallet, setUserWallet ] = useState([])
   const [ walletAmount, setWalletAmount] = useState('')
+  const [ haves, setHaves ] = useState([])
   
   useEffect(() => {
     fetch(`/wallets/${currentUser}`)
     .then(res => res.json())
     .then(data => setUserWallet(data))
     .then(setWalletAmount(userWallet.amount))
-}, [setWalletAmount])
+  }, [setWalletAmount])
 
   useEffect(() => {
     fetch(`/users`)
     .then(res => res.json())
     .then(data => setUsers(data))
-  }, [])
+  }, [setUsers])
 
   useEffect(() => {
     fetch(`/listings`)
     .then(res => res.json())
     .then(data => setListings(data))
-}, [setListings])
+  }, [setListings])
 
-useEffect(() => {
-  fetch(`/users/${currentUser}`)
-  .then(res => res.json())
-  .then(data => setUser(data))
-}, [setUser])
+  useEffect(() => {
+    fetch(`/users/${currentUser}`)
+    .then(res => res.json())
+    .then(data => setUser(data))
+  }, [setUser])
+
+  useEffect(() => {
+    fetch(`/haves`)
+    .then(res => res.json())
+    .then(data => setHaves(data))
+  }, [setHaves])
+
+  function updateHaves(newHave) {
+    setHaves([newHave, ...haves])
+  }
 
   function removeListing(id) {
     const newListings = listings.filter((listing) => listing.id !== id)
@@ -81,7 +93,8 @@ useEffect(() => {
           }/>
         <Route path='/sendlistings' 
           element={<ListingsPage 
-          listings={listings}/>
+          listings={listings}
+          haves={haves}/>
           }/>
         <Route path='/userlistings' 
           element={<UserListingsPage 
@@ -106,8 +119,11 @@ useEffect(() => {
           element={<GameDetails 
           currentGame={currentGame}/>
           }/>
-          <Route path='wallet'
+          <Route path='/wallet'
           element={<WalletPage userwallet={userWallet} walletAmount={walletAmount} setWalletAmount={setWalletAmount}/>}/>
+          <Route 
+          path='/haves' 
+          element={<HavesPage haves={haves} updateHaves={updateHaves}/>}/>
       </Routes>
     </div>
   )
