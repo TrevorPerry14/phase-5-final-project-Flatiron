@@ -13,7 +13,7 @@ class ListingsController < ApplicationController
     end
 
     def destroy 
-        @listing.destroy 
+        @listing.destroy
         head :no_content
     end
 

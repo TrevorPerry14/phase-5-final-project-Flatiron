@@ -52,17 +52,27 @@ export default function ListingCard({ listing, consoleHaves }) {
     }
 
     return (
-        <div>
-            <div>
-                {user_id}
-                balance: {listing.user.wallet.amount}
+        <div class='grid grid-cols-1 grid-rows-3  w-auto h-auto mx-2 my-2 pb-2 '>
+            <div className="bg-[#D3D7D8] pl-2">
+                <div>
+                    {user_id}  ${listing.user.wallet.amount}
+                </div>
+                <div>
+                    1 {console_id ? "Console" : "Game"}
+                </div>
             </div>
-            <div>
-                {console_id}
-                {game_id}
-                {listing_price}
+            <div className='bg-[#ECF0F1] pb-2 pl-2'>
+                <div>
+                    1X {console_id}
+                    {game_id}
+                </div>
+                <div className=''>
+                    ${listing_price}
+                </div>
             </div>
-            <button onClick={handleSubmit} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Send To User</button>
+            <div className='bg-[#ECF0F1]'>
+                <button onClick={handleSubmit} className="inline-block px-6 py-2.5 bg-[#1ABC9C] text-[#FFFFFF] font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Send To User</button>
+            </div>
         </div>
     )
 }

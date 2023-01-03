@@ -63,7 +63,7 @@ export default function WalletPage({ walletAmount, setWalletAmount, userWallet})
     }
 
     return (
-        <div className="absolute top-20 left-5">
+        <div className="absolute top-20 left-[20%] right-[20%]">
             <div>
                 Add Funds:
             </div>

@@ -13,14 +13,16 @@ export default function ListingsPage({ listings, haves }) {
     const consoleHaves = haves.filter((have) =>
     have.console_listing == true)
 
+    const gameHaves = haves.filter((have) => have.console_listing === false)
+
     return (
-        <div className="absolute top-20 left-5">
-            <h2 className="font-bold ">Send Packages</h2>
+        <div className="absolute top-40 left-[20%] right-[20%]">
+            <h2 className="font-bold">Send Packages</h2>
             <div>
-                <SearchFilter />
+                    
             </div>
             <div>
-                <ListingsContainer listings={activeListings} consoleHaves={consoleHaves}/>
+                <ListingsContainer listings={activeListings} consoleHaves={consoleHaves} gameHaves={gameHaves}/>
             </div>
         </div>
     )

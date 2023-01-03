@@ -10,5 +10,11 @@ class HaveSerializer < ActiveModel::Serializer
       self.object.console.name
     end
   end
+
+  def game_id
+    if self.object.console_listing == false
+      self.object.game.name
+    end
+  end
   
 end

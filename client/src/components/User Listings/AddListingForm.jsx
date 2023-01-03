@@ -41,9 +41,8 @@ export default function AddListingForm({ updateListings }) {
     
     return (
         <div>
-            <h2>Add Want Here</h2>
             <form onSubmit={handleSubmit}>
-                <label>Console(only if selling console)</label>
+                <label>Console(only if selling console): </label>
                 <select name='console_id' onChange={handleSelect}>
                     <option></option>
                     <option value='1'>Nintendo NES</option>
@@ -52,7 +51,8 @@ export default function AddListingForm({ updateListings }) {
                     <option value='4'>Nintendo Gamecube</option>
                     <option value='5'>GameBoy</option>
                 </select>
-                <label>Game(only if selling game)</label>
+                <div>
+                <label>Game(only if selling game): </label>
                 <select name='game_id' onChange={handleSelect}>
                     <option></option>
                     <option value='1'>Super Mario Bros</option>
@@ -76,9 +76,14 @@ export default function AddListingForm({ updateListings }) {
                     <option value='19'>Pokemon Blue</option>
                     <option value='20'>Zelda Link's Awakening</option>
                 </select>
-                <label>Price</label>
-                <input name='listing_price' placeholder='price here' type='text' onChange={handleChange}></input>
-                <button className="inline-block px-6 py-2.5 bg-green-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                </div>
+                <div>
+                    <label>Price: </label>
+                    <input name='listing_price' placeholder='price here' type='text' onChange={handleChange}></input>
+                </div>
+                <div>
+                    <button className="inline-block px-6 py-2.5 bg-green-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                </div>
             </form>
         </div>
     )

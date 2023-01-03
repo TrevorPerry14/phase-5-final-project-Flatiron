@@ -6,8 +6,8 @@ export default function HaveCard({ have }) {
     return (
         <div>
             <div>
-                {quantity}
                 {console_listing ? console.name : game.name}
+                {quantity}
                 {console_listing ? console.loose_price : game.loose_price}
                 {console_listing ? console.cib_price : game.cib_price}
                 {active ? "Active" : "Paused"}

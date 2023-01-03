@@ -19,8 +19,7 @@ export default function LogIn() {
         sessionStorage.setItem("user_id", user.id)
     }
 
-    function onSubmit(e) {
-        e.preventDefault()
+    function onSubmit() {
         const user = {
             username, 
             password

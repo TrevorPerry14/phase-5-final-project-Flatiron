@@ -285,7 +285,6 @@ puts "Creating Listings"
 40.times {
     Listing.create(
         user_id: User.all.ids.sample,
-        console_id: Console.all.ids.sample,
         game_id: Game.all.ids.sample,
         listing_price: rand(20..100),
         active: true

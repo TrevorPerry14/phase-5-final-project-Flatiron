@@ -15,8 +15,8 @@ export default function SendingPage({ listings }) {
     <SendingListingCard key={listing.id} listing={listing}/>)
 
     return (
-        <div className="absolute top-20 left-5">
-            <h3>Sending</h3>
+        <div className="absolute top-20 left-[20%] right-[20%]">
+            <h2 className="font-bold">Sending</h2>
             {listingsToSend}
         </div>
     )
