@@ -27,7 +27,7 @@ export default function LandingPage({ currentUser }) {
                 </ul>
             </div>
             </div>
-            <div className="ml-[50%] pb-40 ">
+            <div className="pl-2 pb-20 ">
                 <h4 className="font-bold">About Game Exchange:</h4> 
                 <ul className="list-disc list-inside "> 
                     <li>USD as currency</li>

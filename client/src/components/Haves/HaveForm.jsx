@@ -94,7 +94,7 @@ export default function HaveForm({ updateHaves }) {
                 <input type='text' name='quantity' onChange={handleChange}/>
                 </div>
                 <div>
-                <button className="inline-block px-6 py-2.5 bg-[#435d7e] text-white font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Add</button>
+                <button className="inline-block px-6 py-2.5 bg-[#435d7e] text-white font-bold text-xs leading-tight uppercase rounded-full shadow-md  focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Add</button>
                 </div>
                 
                 

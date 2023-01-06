@@ -13,7 +13,7 @@ export default function UserListingCollection({ user, removeListing }) {
 
     return (
         <div>
-            <div className='pt-8 bg-[#D3D7D8] font-bold grid grid-cols-6 pb-3 mb-5'>
+            <div className='pt-8 bg-[#D3D7D8] font-bold grid grid-cols-5 pb-3 mb-5'>
                 <div className='pl-5'>Item Name: </div>
                 {/* <div className=''>Quantity:</div> */}
                 <div className=''>Game / Console:</div>

@@ -9,7 +9,7 @@ export default function WalletPage({ walletAmount, setWalletAmount, userWallet})
         fetch(`/wallets/${userId}`)
         .then(res => res.json())
         .then(data => setBalance(data.amount))
-    }, [])
+    }, [balance])
     
     const [formData, setFormData ] = useState('')
     const userId = sessionStorage.getItem('user_id')
@@ -38,6 +38,7 @@ export default function WalletPage({ walletAmount, setWalletAmount, userWallet})
     .then(res => res.json())
     .then(data => console.log(data))
     .then(handleAddFunds)
+    // .then(window.location.reload())
     }
 
     function handleInput(e) {
@@ -60,6 +61,7 @@ export default function WalletPage({ walletAmount, setWalletAmount, userWallet})
         })
         .then(res => res.json()
         .then(data => setBalance(data)))
+        .then(window.location.reload())
     }
 
     return (

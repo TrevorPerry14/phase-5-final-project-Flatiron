@@ -28,7 +28,6 @@ puts "Creating Users"
 }
 
 
-
 #Sample Data for Console used for Tests and Demo
 puts "Creating Consoles"
 Console.create(
@@ -323,6 +322,16 @@ puts "Creating Listings"
         listing_price: rand(60..120)
     )
 }
+
+User.create(
+    email: "trevorperry143@gmail.com",
+    password: "Bama14",
+    name: "Trevor Perry",
+    username: "TrevorPerry14",
+    country: "United States Of America",
+    shipping_address: "1439 Greystone Drive, Pensacola, FL 32514"
+)
+
 
 puts "Creating Wallets"
 users = User.all

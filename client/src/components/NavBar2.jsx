@@ -10,8 +10,8 @@ export default function NavBar2({ user }) {
 
     function handleLogOut() {
         sessionStorage.removeItem('user_id')
-        window.location.reload()
         navigate('/')
+        window.location.reload()
     }
     return (
     <div>
