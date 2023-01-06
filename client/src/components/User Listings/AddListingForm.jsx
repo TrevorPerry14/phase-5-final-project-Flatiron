@@ -32,7 +32,7 @@ export default function AddListingForm({ updateListings }) {
     }
 
     function handleSelect(e) {
-        const {name, value} = e.target;
+        const {name, value} = e.target
         setFormData({
             ...formData, [name]: parseInt(value)
         })
@@ -41,7 +41,8 @@ export default function AddListingForm({ updateListings }) {
     
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='bg-[#D3D7D8] grid grid-cols-2 grid-rows-3 pl-10 pt-5 mt-5 mb-5'>
+            <div>
                 <label>Console(only if selling console): </label>
                 <select name='console_id' onChange={handleSelect}>
                     <option></option>
@@ -51,6 +52,7 @@ export default function AddListingForm({ updateListings }) {
                     <option value='4'>Nintendo Gamecube</option>
                     <option value='5'>GameBoy</option>
                 </select>
+                </div>
                 <div>
                 <label>Game(only if selling game): </label>
                 <select name='game_id' onChange={handleSelect}>
@@ -82,7 +84,7 @@ export default function AddListingForm({ updateListings }) {
                     <input name='listing_price' placeholder='price here' type='text' onChange={handleChange}></input>
                 </div>
                 <div>
-                    <button className="inline-block px-6 py-2.5 bg-green-200 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
+                    <button className="inline-block px-6 py-2.5 bg-[#435d7e] text-white font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Submit</button>
                 </div>
             </form>
         </div>

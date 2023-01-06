@@ -8,6 +8,7 @@ class CreateConsoles < ActiveRecord::Migration[7.0]
       t.integer :number_of_players
       t.integer :loose_price
       t.integer :cib_price
+      t.string :image
 
       t.timestamps
     end

@@ -12,7 +12,7 @@ export default function GameCollection({ games, setCurrentGame }) {
     )
 
     return (
-        <div className="space-y-5">
+        <div className="grid grid-cols-4 bg-[#D3D7D8] p-10 gap-10">
             {gameList}
         </div>
     )

@@ -63,13 +63,13 @@ export default function WalletPage({ walletAmount, setWalletAmount, userWallet})
     }
 
     return (
-        <div className="absolute top-20 left-[20%] right-[20%]">
-            <div>
+        <div className="grid space-y-4 absolute top-[20%] left-[37.5%] bg-[#D3D7D8] h-1/3 w-1/4 p-5 text-[#555555]">
+            <div className='font-bold text-xl'>
                 Add Funds:
             </div>
             <form>
                 <div>
-                    <label>Amount to Add: $</label>
+                    <label className="text-lg">Amount to Add: $</label>
                     <input name='amount' type='text' onChange={handleInput} className="outline outline-1"></input>
                 </div>
             </form>

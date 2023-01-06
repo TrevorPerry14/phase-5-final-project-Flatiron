@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
     before_action :select_listing, only: [:show, :destroy, :update]
 
     def index 
-        render json: Listing.all, include: ["user", "user.wallet"]
+        render json: Listing.all, include: ["user", "user.wallet", "console", "game"]
     end
 
     def show 
@@ -23,7 +23,7 @@ class ListingsController < ApplicationController
     end
 
     def update 
-        @listing.update(listing_params)
+        @listing.update!(listing_params)
         render json: @listing
     end
 
@@ -38,7 +38,7 @@ class ListingsController < ApplicationController
     end
 
     def listing_params 
-        params.permit(:id, :user_id, :console_id?, :game_id, :listing_price, :active, :sending_user, :recieving)
+        params.permit(:id, :user_id, :console_id, :game_id, :listing_price, :active, :sending_user, :recieving)
     end
 
 end

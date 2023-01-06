@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_194643) do
     t.integer "number_of_players"
     t.integer "loose_price"
     t.integer "cib_price"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_194643) do
     t.integer "number_of_players"
     t.integer "loose_price"
     t.integer "cib_price"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["console_id"], name: "index_games_on_console_id"

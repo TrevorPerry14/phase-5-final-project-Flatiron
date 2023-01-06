@@ -1,7 +1,7 @@
 import React from 'react'
 import HaveCard from './HaveCard'
 
-export default function HaveContainer({ haves }) {
+export default function HaveContainer({ haves, removeHave }) {
 
     const userId = sessionStorage.getItem("user_id")
 
@@ -9,15 +9,15 @@ export default function HaveContainer({ haves }) {
     have.user_id == userId)
 
     const havesList = userHaves.map((have) =>
-    <HaveCard key={have.id} have={have}/>)
+    <HaveCard key={have.id} have={have} removeHave={removeHave}/>)
 
     return (
         <div>
-            <div className='pt-16 bg-[#D3D7D8] font-bold'>
-                <div className='absolute top-[35%] left-[2%] bg-[#D3D7D8]'>Item Name: </div>
-                <div className='absolute top-[35%] left-[18%]'>Quantity:</div>
-                <div className='absolute top-[35%] left-[32%] bg-[#D3D7D8]'>Game / Console:</div>
-                <div className='absolute top-[32%] left-[53%] bg-[#D3D7D8]'>
+            <div className='pt-8 bg-[#D3D7D8] font-bold grid grid-cols-6 pb-3 '>
+                <div className='pl-6'>Item Name: </div>
+                <div className='pl-5'>Quantity:</div>
+                <div className=''>Game / Console:</div>
+                <div className='pl-8 '>
                     <div>
                         Loose 
                     </div>
@@ -25,7 +25,7 @@ export default function HaveContainer({ haves }) {
                     Market Price:
                     </div>
                 </div>
-                <div className='absolute top-[32%] left-[72%]'>
+                <div className='pl-16'>
                     <div>
                         CIB 
                     </div>
@@ -33,9 +33,9 @@ export default function HaveContainer({ haves }) {
                         Market Price:
                     </div>
                 </div>
-                <div className='absolute top-[35%] left-[90%] bg-[#D3D7D8]'>Status:</div>
+                <div className='pl-20'>Status:</div>
             </div>
-            <div className='pt-10'>
+            <div className='mt-5'>
                 {havesList}
             </div>
         </div>

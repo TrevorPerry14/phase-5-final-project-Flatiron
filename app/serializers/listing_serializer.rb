@@ -4,6 +4,8 @@ class ListingSerializer < ActiveModel::Serializer
   attribute :game_id, if: :game_id_true
 
   belongs_to :user
+  belongs_to :game, optional: true
+  belongs_to :console, optional: true
   
   def user_id 
     self.object.user.name

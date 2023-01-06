@@ -46,12 +46,13 @@ export default function LogIn() {
     
     return (
         <div >
-            <form onSubmit={onSubmit} className="grid place-items-center space-y-4 absolute top-[20%] left-[42%]">
-                <label>Username:</label>
-                <input type='username' name='username' value={username} onChange={handleChange}></input>
-                <label>Password:</label>
-                <input type='password' name='password' value={password} onChange={handleChange} ></input>
-                <button className="inline-block px-6 py-2.5 bg-green-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Log In!</button>
+            <form onSubmit={onSubmit} className="grid space-y-4 absolute top-[20%] left-[37.5%] bg-[#D3D7D8] h-1/3 w-1/4 p-5 text-[#555555]">
+                <h1 className='text-lg'>Log In</h1>
+                <h3 className='text-sm font-bold'>Username:</h3>
+                <input type='username' name='username' value={username} onChange={handleChange} className=''></input>
+                <label className='text-sm font-bold'>Password:</label>
+                <input type='password' name='password' value={password} onChange={handleChange} className=''></input>
+                <button className="inline-block px-6 py-2 bg-green-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out ml-10 mr-10">Log In!</button>
             </form>
             {errors? <div>{errors}</div>:null}
         </div>

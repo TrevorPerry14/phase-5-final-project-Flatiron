@@ -14,6 +14,7 @@ export default function SearchGameFilter({ gameSearch, setGameSearch }) {
                 placeholder='Search Games'
                 value={gameSearch}
                 onChange={handleChange}
+                className='w-5/6 p-2'
                 />
             </div>
         </div>

@@ -21,6 +21,7 @@ export default function SearchConsoleFilter({ consoleSearch, setConsoleSearch}) 
                 placeholder='Search Consoles'
                 value={consoleSearch}
                 onChange={handleChange}
+                className='w-5/6 p-2'
                 />
             </div>
         </div>

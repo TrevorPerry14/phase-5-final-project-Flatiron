@@ -15,6 +15,7 @@ import GameDetails from './components/Explore/GameDetails';
 import ReceivingPage from './components/Sending Page/ReceivingPage';
 import WalletPage from './components/Wallet/WalletPage';
 import HavesPage from './components/Haves/HavesPage';
+import Background from './Assets/Background.jpg'
 
 export default function App() {
   const [users, setUsers] = useState([])
@@ -66,6 +67,11 @@ export default function App() {
       setListings(newListings)
 }
 
+  function removeHave(id) {
+    const newHaves = haves.filter((have) => have.id !== id)
+    setHaves(newHaves)
+  }
+
   function updateListings(newListing) {
     setListings([newListing, ...listings])
   }
@@ -73,7 +79,8 @@ export default function App() {
   const currentUser = sessionStorage.getItem('user_id')
 
   return (
-    <div>
+    <div style={{ backgroundimage:`url(${Background})` }}>
+      <div>
       {currentUser ? <NavBar2 user={user}/> : <NavBar />}
       <Routes >
         <Route path='/' 
@@ -123,8 +130,9 @@ export default function App() {
           element={<WalletPage userwallet={userWallet} walletAmount={walletAmount} setWalletAmount={setWalletAmount}/>}/>
           <Route 
           path='/haves' 
-          element={<HavesPage haves={haves} updateHaves={updateHaves}/>}/>
+          element={<HavesPage haves={haves} updateHaves={updateHaves} removeHave={removeHave}/>}/>
       </Routes>
+      </div>
     </div>
   )
 }

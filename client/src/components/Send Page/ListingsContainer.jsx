@@ -7,27 +7,24 @@ export default function ListingsContainer({ listings, consoleHaves, gameHaves })
 
     const gameIds = gameHaves.map((have) => have.game_id)
 
-        const consoleListings = listings.filter((listing) => ids.includes(listing.console_id))
+    const consoleListings = listings.filter((listing) => ids.includes(listing.console_id))
 
-        const gameListings = listings.filter((listing) => gameIds.includes(listing.game_id))
+    const gameListings = listings.filter((listing) => gameIds.includes(listing.game_id))
 
-        const haveListings = [...consoleListings, ...gameListings]
+    const haveListings = [...consoleListings, ...gameListings]
 
-        
+    const orderedListings = haveListings.sort((a, b) => (a.listing_price > b.listing_price) ? -1 : 1)
 
-        const orderedListings = haveListings.sort((a, b) => (a.listing_price > b.listing_price) ? -1 : 1)
-
-        const filteredListings = orderedListings.map((listing) => 
+    const filteredListings = orderedListings.map((listing) => 
         <ListingCard 
-        key={listing.id} 
-        listing={listing}
-        />)
+            key={listing.id} 
+            listing={listing}
+        />
+        )
 
     return (
-        <div className="space-y-5 ">
-            <div className='grid grid-cols-4 grid-rows-auto'>
+            <div className='grid grid-cols-4 grid-rows-auto bg-[#FFFFFF]'>
                 {filteredListings}
             </div>
-        </div>
     ) 
 }

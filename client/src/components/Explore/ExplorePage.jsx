@@ -42,12 +42,12 @@ export default function ExplorePage({ setCurrentConsole, setCurrentGame }) {
 
     return (
         <div className="absolute top-20 left-[20%] right-[20%]">
-            <h1 className="grid place-items-center font-bold pb-10">Explore</h1>
-            <div className="place-items-center pb-5">
-                <button onClick={handleConsoleClick} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Consoles</button>
-                <button onClick={handleGameClick} className="inline-block px-6 py-2.5 bg-gray-300 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Games</button>
+            <h1 className="grid place-items-center font-bold pb-10 text-center text-xl"></h1>
+            <div className=" grid grid-cols-2 place-items-center pb-5 bg-[#D3D7D8] pt-5">
+                <button onClick={handleConsoleClick} className="inline-block px-6 py-2.5 bg-gray-100 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Consoles</button>
+                <button onClick={handleGameClick} className="inline-block px-6 py-2.5 bg-gray-100 text-gray-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Games</button>
             </div>
-            <div className='pb-14'>
+            <div className='bg-[#D3D7D8] p-5 mb-10 pl-44'>
                 {exploreConsoles 
                 ? 
                 <SearchConsoleFilter consoleSearch={consoleSearch} setConsoleSearch={setConsoleSearch}/> 

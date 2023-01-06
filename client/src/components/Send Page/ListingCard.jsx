@@ -4,7 +4,7 @@ export default function ListingCard({ listing, consoleHaves }) {
     const [currentListing, setCurrentListing] = useState(listing)
     const [balance, setBalance] = useState(currentListing.user.wallet.amount)
  
-    const { id, user_id, console_id, game_id, listing_price, sending_user, active, console} = listing
+    const { id, user_id, console_id, game_id, listing_price, sending_user, active, console, game} = listing
 
     function handleEdit(name, value) {
         setCurrentListing({
@@ -13,8 +13,7 @@ export default function ListingCard({ listing, consoleHaves }) {
         })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
+    function handleSubmit() {
         const currentId = sessionStorage.getItem("user_id")
         const updatedListing = {
             sending_user: currentId,
@@ -30,6 +29,7 @@ export default function ListingCard({ listing, consoleHaves }) {
         .then( res => res.json())
         .then(handleEdit)
         .then(handlePayment)
+        .then(window.location.reload())
     }
 
     //this function takes the payment from the user when the package is claimed
@@ -51,8 +51,9 @@ export default function ListingCard({ listing, consoleHaves }) {
         .then(data => setBalance(data))
     }
 
+    
     return (
-        <div class='grid grid-cols-1 grid-rows-3  w-auto h-auto mx-2 my-2 pb-2 '>
+        <div className='grid grid-cols-1 grid-rows-3  w-auto h-auto mx-2 my-2 '>
             <div className="bg-[#D3D7D8] pl-2">
                 <div>
                     {user_id}  ${listing.user.wallet.amount}
@@ -60,19 +61,26 @@ export default function ListingCard({ listing, consoleHaves }) {
                 <div>
                     1 {console_id ? "Console" : "Game"}
                 </div>
+                <div>
+                    ${listing_price}.00
+                </div>
             </div>
-            <div className='bg-[#ECF0F1] pb-2 pl-2'>
+            <div className='bg-[#ECF0F1] pl-2'>
                 <div>
                     1X {console_id}
                     {game_id}
                 </div>
                 <div className=''>
-                    ${listing_price}
+                    <div>
+                        ${listing_price}.00
+                    </div>
+                    <div>${console_id ? console_id.loose_price : game_id.loose_price}.00</div>
+                </div>
+                <div>
+                <button onClick={handleSubmit} className="inline-block px-6 py-2.5 bg-red-300 text-[#FFFFFF] font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Send To User</button>
                 </div>
             </div>
-            <div className='bg-[#ECF0F1]'>
-                <button onClick={handleSubmit} className="inline-block px-6 py-2.5 bg-[#1ABC9C] text-[#FFFFFF] font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out">Send To User</button>
-            </div>
+          
         </div>
     )
 }

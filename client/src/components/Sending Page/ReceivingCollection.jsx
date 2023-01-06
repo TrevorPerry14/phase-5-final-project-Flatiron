@@ -4,6 +4,7 @@ import ReceivingListingCard from './ReceivingListingCard'
 export default function ReceivingCollection({ user, removeListing }) {
 
     const {listings} = user
+    console.log(listings)
 
     const filteredListings = listings?.filter((listing) =>
     listing.recieving == true)
